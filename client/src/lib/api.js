@@ -143,10 +143,8 @@ export const getAllPayments = async () => {
 export const getPaymentById = async (paymentId) => {
   try {
     const res = await axiosInstance.get(`/payments/${paymentId}`);
-
     return res.data;
   } catch (error) {
-    console.error("Error fetching payment by ID:", error);
-    throw error;
+    console.log(error);
   }
 };
