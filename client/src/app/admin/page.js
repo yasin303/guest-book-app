@@ -17,7 +17,7 @@ export default function AdminLoginPage() {
     if (token) {
       router.push("/admin/dashboard");
     }
-  });
+  }, [router]);
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -28,8 +28,8 @@ export default function AdminLoginPage() {
       setToken(response.token);
       router.push("/admin/dashboard");
     } catch (error) {
-      const errorMessage = error.message || "Login gagal, Periksa kembali email dan password Anda.";
-      setError(errorMessage);
+      const errorMessage = "Login gagal, Periksa kembali email dan password Anda.";
+      setError(error.message);
       alert(errorMessage);
     } finally {
       setIsSubmitting(false);
@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+            className="transition duration-300 ease-in-out mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
             placeholder="Enter your email"
           />
         </div>
@@ -66,24 +66,29 @@ export default function AdminLoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
+            className="transition duration-300 ease-in-out mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"
             placeholder="Enter your password"
           />
         </div>
 
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        {error && <p className="text-red-500 text-sm mt-2 transition-opacity duration-300">{error}</p>}
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full py-2 mt-4 px-4 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`transition duration-300 ease-in-out w-full py-2 mt-4 px-4 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           {isSubmitting ? "Logging in..." : "Login"}
         </button>
       </form>
 
       <div className="mt-6 text-center">
-        <Link href={"/"} className="text-sm text-indigo-600 hover:text-indigo-500 hover:underline">
+        <Link
+          href={"/"}
+          className="text-sm text-indigo-600 hover:text-indigo-500 hover:underline transition duration-300 ease-in-out"
+        >
           Kembali ke halaman utama
         </Link>
       </div>

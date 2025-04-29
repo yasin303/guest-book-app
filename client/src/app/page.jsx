@@ -53,7 +53,7 @@ export default function HomePage() {
             value={nama}
             onChange={(e) => setNama(e.target.value)}
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="transition duration-300 ease-in-out w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
         {/* Pesan */}
@@ -67,21 +67,31 @@ export default function HomePage() {
             onChange={(e) => setPesan(e.target.value)}
             required
             rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="transition duration-300 ease-in-out w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           ></textarea>
         </div>
 
         {/* Render error */}
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+        {error && (
+          <p className="text-red-500 text-sm transition-opacity duration-300 ease-in-out opacity-100">
+            {error}
+          </p>
+        )}
 
         {/* Render success message */}
-        {success && <p className="text-green-500 text-sm">{success}</p>}
+        {success && (
+          <p className="text-green-500 text-sm transition-opacity duration-300 ease-in-out opacity-100">
+            {success}
+          </p>
+        )}
 
         {/* Button  */}
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`transition duration-300 ease-in-out w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+            isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+          }`}
         >
           {isSubmitting ? "Mengirim..." : "Kirim"}
         </button>

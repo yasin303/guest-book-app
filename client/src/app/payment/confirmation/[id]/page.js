@@ -79,7 +79,7 @@ export default function PaymentConfirmationPage() {
         </svg>
         <h1 className="text-2xl font-bold text-gray-800">Pembayaran Berhasil</h1>
 
-        <p className="text-gray-600">Terima kasih telah melakukan pembayaran.</p>
+        <p className="text-gray-600">Terima kasih, pembayaran Anda sebesar {formatCurrency(payment.jumlah_pembayaran)} telah berhasil diproses.</p>
       </div>
 
       <hr className="my-4 border-gray-200" />
