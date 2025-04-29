@@ -20,7 +20,7 @@ initializeDatabase()
   .then(() => {
     app.use(
       cors({
-        origin: "http://localhost:3000",
+        origin: ["https://guest-book-app-navy.vercel.app", "http://localhost:3000"],
         credentials: true,
       })
     );
