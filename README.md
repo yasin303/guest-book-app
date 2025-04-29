@@ -1,6 +1,6 @@
-# 📚 Guest Book Web App
+# 📚 Guest Book - Techno Yasin Abdul
 
-Aplikasi Buku Tamu berbasis web dengan **frontend (Next.js)**, **backend (Express.js)** dan database **SQLite**. Fitur utama mencakup buku tamu, login admin, halaman pembayaran dan konfirmasi pembayaran.
+Aplikasi Buku Tamu berbasis web dengan **frontend (Next.js)**, **backend (Express.js)** dan database **SQLite**. Fitur utama isi pesan buku tamu, login admin, halaman pembayaran dan konfirmasi pembayaran.
 
 ---
 
@@ -124,9 +124,16 @@ npm run dev
 
 ## ✅ Validasi & Responsif
 
-- Validasi input di frontend dan backend
+- Validasi input di frontend & backend
 - Layout mendukung perangkat mobile
 
 ---
 
+## 💾 Akses Database
 
+- Buka DB viewer (DBeaver)
+- New Connection
+- Pilih SQLite (Jika belum install, dbeaver otomatis install dulu)
+- Pilih db file di repo ini (database.sqlite) setelah di running (npm run dev)
+
+---
