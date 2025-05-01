@@ -103,6 +103,7 @@ export default function AdminDashboardPage() {
 
       {!isLoading && !error && (
         <div className="overflow-x-auto">
+          {/* Table for guest data */}
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
